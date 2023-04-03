@@ -9,7 +9,7 @@ export default function EventsCatPage({ data, cat }) {
       <main className={styles.main}>
         {data.map(({ title, description, image, id }) => (
           <>
-            <Link key="ev.id" href={`${cat}/${id}`} passHref>
+            <Link key={id} href={`${cat}/${id}`} passHref>
               <h2>{title}</h2>
               <Image src={image} alt={title} width={300} height={200} />
               <p>{description}</p>

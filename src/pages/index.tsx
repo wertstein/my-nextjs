@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
+import { HomePage } from "@/components/home/home-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +10,7 @@ async function getCategories() {
   return events_categories;
 }
 
-export default function HomePage({ data }) {
+export default function homePage({ data }) {
   return (
     <>
       <Head>
@@ -22,27 +20,7 @@ export default function HomePage({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about-us">About us</Link>
-        </nav>
-      </header>
-
-      <main className={styles.main}>
-        {data.map((ecat) => (
-          <Link key={ecat.id} href={`/events/${ecat.id}`}>
-            <Image src={ecat.image} alt={ecat.id} width={300} height={200} />
-            <h2>{ecat.title}</h2>
-            <p>{ecat.description}</p>
-          </Link>
-        ))}
-      </main>
-
-      <footer className={styles.footer}>
-        <p>(c) 2023 - Lets try Next.js</p>
-      </footer>
+      <HomePage data={data} />
     </>
   );
 }
