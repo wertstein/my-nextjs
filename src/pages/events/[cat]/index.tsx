@@ -1,12 +1,11 @@
 import Link from "next/link";
-import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 
 export default function EventsCatPage({ data, cat }) {
   return (
     <div>
       <h1>Events in {cat}</h1>
-      <main className={styles.main}>
+      <main>
         {data.map(({ title, description, image, id }) => (
           <>
             <Link key={id} href={`${cat}/${id}`} passHref>

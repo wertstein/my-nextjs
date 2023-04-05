@@ -1,12 +1,11 @@
 import Link from "next/link";
-import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 
 export default function EventsPage({ data }) {
   return (
     <div>
       <h1>Events</h1>
-      <main className={styles.main}>
+      <main>
         {data.map((ecat) => (
           <Link key={ecat.id} href={`/events/${ecat.id}`} passHref>
             <Image src={ecat.image} alt={ecat.id} width={300} height={200} />
