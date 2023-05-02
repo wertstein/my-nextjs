@@ -6,10 +6,12 @@ export const EventDetails = ({ data }: any) => {
   const inputElement = useRef();
   const router = useRouter();
 
-  const onSubmit = async (e: Event) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
 
-    const email = inputElement.current.value;
+    const email = inputElement.current
+      ? (inputElement.current as any).value
+      : "";
     const eventId = router.query.id;
 
     console.log(email, eventId);
