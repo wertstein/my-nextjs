@@ -20,6 +20,6 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function EventPage({ data }) {
+export default function EventPage({ data: any }) {
   return <EventDetails data={data} />;
 }

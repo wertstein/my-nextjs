@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const HomePage = ({ data }) => (
+export const HomePage = ({ data: any }) => (
   <main>
     <h1 className="text-3xl m-4">Discover events in all cities</h1>
     {data.map((ecat) => (

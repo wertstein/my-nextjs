@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function EventsPage({ data }) {
+export default function EventsPage({ data: any }) {
   return (
     <div>
       <h1>Events</h1>

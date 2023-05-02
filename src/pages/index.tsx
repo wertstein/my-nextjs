@@ -10,7 +10,7 @@ async function getCategories() {
   return events_categories;
 }
 
-export default function homePage({ data }) {
+export default function homePage({ data: any }) {
   return (
     <>
       <Head>
