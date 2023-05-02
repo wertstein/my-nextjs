@@ -1,3 +1,4 @@
+import { EventDetails } from "@/components/events/single-events";
 import Image from "next/image";
 
 export async function getStaticPaths() {
@@ -20,16 +21,5 @@ export async function getStaticProps(context: any) {
 }
 
 export default function EventPage({ data }) {
-  return (
-    <div>
-      <Image
-        src={data.image}
-        width={1000}
-        height={200}
-        alt={data.title}
-      ></Image>
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
-    </div>
-  );
+  return <EventDetails data={data} />;
 }
